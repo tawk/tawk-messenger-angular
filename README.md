@@ -64,6 +64,7 @@ export class AppComponent implements OnInit {
 This project includes a `docs` folder with more details on:
 
 1. [API Reference](./docs/api-reference.md)
+2. [Directives](./docs/directives.md)
 <br/>
 
 ## Other JS frameworks plugin
