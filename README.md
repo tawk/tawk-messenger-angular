@@ -32,12 +32,9 @@ yarn add @tawk.to/tawk-messenger-angular
 <br/>
 
 ## Quickstart
-Import the **tawk-messenger-angular** in your main component. The **propertyId** and **widgetId** will
-be found on your tawk dashboard **Administration > Chat Widget**.
+Import the **tawk-messenger-angular** in your **app.component.ts**. The **propertyId** and **widgetId** will be found on your tawk dashboard **Administration > Chat Widget**.
 
 ```js
-import { Component, OnInit } from '@angular/core';
-
 import { TawkMessengerAngular } from 'tawk-messenger-angular';
 
 @Component({
@@ -62,11 +59,11 @@ export class AppComponent implements OnInit {
 }
 ```
 
-
 ## Documentation
 
 This project includes a `docs` folder with more details on:
 
+1. [API Reference](./docs/api-reference.md)
 <br/>
 
 ## Other JS frameworks plugin

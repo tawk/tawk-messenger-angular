@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TawkMessengerAngularService } from './tawk-messenger-angular.service';
+import { TawkMessengerAngular } from './tawk-messenger-angular';
 
 describe('TawkMessengerAngularService', () => {
-  let service: TawkMessengerAngularService;
+  let service: TawkMessengerAngular;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TawkMessengerAngularService);
+    service = TestBed.inject(TawkMessengerAngular);
   });
 
   it('should be created', () => {
