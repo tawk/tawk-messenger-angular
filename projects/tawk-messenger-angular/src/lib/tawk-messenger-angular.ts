@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID, Optional, Renderer2, RendererFactory2, ViewEncapsulation, HostListener, Input } from "@angular/core";
+import { Inject, Injectable, PLATFORM_ID, Optional, Renderer2, RendererFactory2, Output, HostListener, EventEmitter } from "@angular/core";
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -54,6 +54,8 @@ export class TawkMessengerAngular {
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
+
+		this.mapCallbacks();
 	}
 
 	public hideWidget(): void {
@@ -140,4 +142,103 @@ export class TawkMessengerAngular {
 		return (<any>window).Tawk_API.removeTags(tags, callback);
 	}
 
+	@Output() onLoad: EventEmitter<any> = new EventEmitter();
+	@Output() onStatusChange: EventEmitter<any> = new EventEmitter();
+	@Output() onBeforeLoad: EventEmitter<any> = new EventEmitter();
+	@Output() onChatMaximized: EventEmitter<any> = new EventEmitter();
+	@Output() onChatMinimized: EventEmitter<any> = new EventEmitter();
+	@Output() onChatHidden: EventEmitter<any> = new EventEmitter();
+	@Output() onChatStarted: EventEmitter<any> = new EventEmitter();
+	@Output() onChatEnded: EventEmitter<any> = new EventEmitter();
+	@Output() onPrechatSubmit: EventEmitter<any> = new EventEmitter();
+	@Output() onOfflineSubmit: EventEmitter<any> = new EventEmitter();
+	@Output() onChatMessageVisitor: EventEmitter<any> = new EventEmitter();
+	@Output() onChatMessageAgent: EventEmitter<any> = new EventEmitter();
+	@Output() onChatMessageSystem: EventEmitter<any> = new EventEmitter();
+	@Output() onAgentJoinChat: EventEmitter<any> = new EventEmitter();
+	@Output() onAgentLeaveChat: EventEmitter<any> = new EventEmitter();
+	@Output() onChatSatisfaction: EventEmitter<any> = new EventEmitter();
+	@Output() onVisitorNameChanged: EventEmitter<any> = new EventEmitter();
+	@Output() onFileUpload: EventEmitter<any> = new EventEmitter();
+	@Output() onTagsUpdated: EventEmitter<any> = new EventEmitter();
+
+	private mapCallbacks(): void {
+		window.addEventListener('tawkLoad', () => {
+			this.onLoad.emit(null);
+		});
+
+		window.addEventListener('tawkStatusChange', (status?: any) => {
+			this.onStatusChange.emit(status.detail);
+		});
+
+		window.addEventListener('tawkBeforeLoad', () => {
+			this.onBeforeLoad.emit(null);
+		});
+
+		window.addEventListener('tawkChatMaximized', () => {
+			this.onChatMaximized.emit(null);
+		});
+
+		window.addEventListener('tawkChatMinimized', () => {
+			this.onChatMinimized.emit(null);
+		});
+
+		window.addEventListener('tawkChatHidden', () => {
+			this.onChatHidden.emit(null);
+		});
+
+		window.addEventListener('tawkChatStarted', () => {
+			this.onChatStarted.emit(null);
+		});
+
+		window.addEventListener('tawkChatEnded', () => {
+			this.onChatEnded.emit(null);
+		});
+
+		window.addEventListener('tawkPrechatSubmit', (data?: any) => {
+			this.onPrechatSubmit.emit(data.detail);
+		});
+
+		window.addEventListener('tawkOfflineSubmit', (data?: any) => {
+			this.onOfflineSubmit.emit(data.detail);
+		});
+
+		window.addEventListener('tawkChatMessageVisitor', (message?: any) => {
+			this.onChatMessageVisitor.emit(message.detail);
+		});
+
+		window.addEventListener('tawkChatMessageAgent', (message?: any) => {
+			this.onChatMessageAgent.emit(message.detail);
+		});
+
+		window.addEventListener('tawkChatMessageSystem', (message?: any) => {
+			this.onChatMessageSystem.emit(message.detail);
+		});
+
+		window.addEventListener('tawkAgentJoinChat', (data?: any) => {
+			this.onAgentJoinChat.emit(data.detail);
+		});
+
+		window.addEventListener('tawkAgentLeaveChat', (data?: any) => {
+			this.onAgentLeaveChat.emit(data.detail);
+		});
+
+		window.addEventListener('tawkChatSatisfaction', (satisfaction?: any) => {
+			this.onChatSatisfaction.emit(satisfaction.detail);
+		});
+
+		window.addEventListener('tawkVisitorNameChanged', (visitorName?: any) => {
+			this.onVisitorNameChanged.emit(visitorName.detail);
+		});
+
+		window.addEventListener('tawkFileUpload', (link?: any) => {
+			this.onFileUpload.emit(link.detail);
+		});
+
+		window.addEventListener('tawkTagsUpdated', (data?: any) => {
+			this.onTagsUpdated.emit(data.detail);
+		});
+
+		return;
+	}
 }

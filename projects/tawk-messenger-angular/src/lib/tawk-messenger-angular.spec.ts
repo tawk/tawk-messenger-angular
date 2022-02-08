@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { TawkMessengerAngular } from './tawk-messenger-angular';
 
-describe('TawkMessengerAngularService', () => {
+describe('TawkMessengerAngular', () => {
   let service: TawkMessengerAngular;
 
   beforeEach(() => {
