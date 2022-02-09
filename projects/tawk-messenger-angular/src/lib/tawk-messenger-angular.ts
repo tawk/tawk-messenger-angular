@@ -54,8 +54,6 @@ export class TawkMessengerAngular {
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
-
-		this.mapCallbacks();
 	}
 
 	public hideWidget(): void {
@@ -122,123 +120,151 @@ export class TawkMessengerAngular {
 		return (<any>window).Tawk_API.onLoaded();
 	}
 
+	public onBeforeLoaded(): void {
+		return (<any>window).Tawk_API.onBeforeLoaded ();
+	}
+
+	public widgetPosition(): void {
+		return (<any>window).Tawk_API.widgetPosition  ();
+	}
+
 	public visitor(data: string) {
 		return (<any>window).Tawk_API.visitor = data;
 	}
 
-	public setAttributes(attribute: string, callback: (ev: Event) => any) {
-		return (<any>window).Tawk_API.setAttributes(attribute, callback);
+	public setAttributes(attribute: string, callback: (error?: any) => any) {
+		return (<any>window).Tawk_API.setAttributes(attribute, callback());
 	}
 
-	public addEvent(event: string, metadata: any, callback: (ev: Event) => any) {
-		return (<any>window).Tawk_API.setAttributes(event, metadata, callback);
+	public addEvent(event: string, metadata: any, callback: (error?: any) => any) {
+		return (<any>window).Tawk_API.setAttributes(event, metadata, callback());
 	}
 
-	public addTags(tags: any, callback: (ev: Event) => any) {
-		return (<any>window).Tawk_API.addTags(tags, callback);
+	public addTags(tags: any, callback: (error?: any) => any) {
+		return (<any>window).Tawk_API.addTags(tags, callback());
 	}
 
-	public removeTags(tags: any, callback: (ev: Event) => any) {
-		return (<any>window).Tawk_API.removeTags(tags, callback);
+	public removeTags(tags: any, callback: (error?: any) => any) {
+		return (<any>window).Tawk_API.removeTags(tags, callback());
 	}
 
-	@Output() onLoad: EventEmitter<any> = new EventEmitter();
-	@Output() onStatusChange: EventEmitter<any> = new EventEmitter();
-	@Output() onBeforeLoad: EventEmitter<any> = new EventEmitter();
-	@Output() onChatMaximized: EventEmitter<any> = new EventEmitter();
-	@Output() onChatMinimized: EventEmitter<any> = new EventEmitter();
-	@Output() onChatHidden: EventEmitter<any> = new EventEmitter();
-	@Output() onChatStarted: EventEmitter<any> = new EventEmitter();
-	@Output() onChatEnded: EventEmitter<any> = new EventEmitter();
-	@Output() onPrechatSubmit: EventEmitter<any> = new EventEmitter();
-	@Output() onOfflineSubmit: EventEmitter<any> = new EventEmitter();
-	@Output() onChatMessageVisitor: EventEmitter<any> = new EventEmitter();
-	@Output() onChatMessageAgent: EventEmitter<any> = new EventEmitter();
-	@Output() onChatMessageSystem: EventEmitter<any> = new EventEmitter();
-	@Output() onAgentJoinChat: EventEmitter<any> = new EventEmitter();
-	@Output() onAgentLeaveChat: EventEmitter<any> = new EventEmitter();
-	@Output() onChatSatisfaction: EventEmitter<any> = new EventEmitter();
-	@Output() onVisitorNameChanged: EventEmitter<any> = new EventEmitter();
-	@Output() onFileUpload: EventEmitter<any> = new EventEmitter();
-	@Output() onTagsUpdated: EventEmitter<any> = new EventEmitter();
-
-	private mapCallbacks(): void {
+	public onLoad(callback?: any): void {
 		window.addEventListener('tawkLoad', () => {
-			this.onLoad.emit(null);
+			callback();
 		});
+	}
 
+	public onStatusChange(callback?: any): void {
 		window.addEventListener('tawkStatusChange', (status?: any) => {
-			this.onStatusChange.emit(status.detail);
+			callback(status.detail);
 		});
+	}
 
+	public onBeforeLoad(callback?: any): void {
 		window.addEventListener('tawkBeforeLoad', () => {
-			this.onBeforeLoad.emit(null);
+			callback();
 		});
+	}
 
+	public onChatMaximized(callback?: any): void {
 		window.addEventListener('tawkChatMaximized', () => {
-			this.onChatMaximized.emit(null);
+			callback();
 		});
+	}
 
+	public onChatMinimized(callback?: any): void {
 		window.addEventListener('tawkChatMinimized', () => {
-			this.onChatMinimized.emit(null);
+			callback();
 		});
+	}
 
+	public onChatHidden(callback?: any): void {
 		window.addEventListener('tawkChatHidden', () => {
-			this.onChatHidden.emit(null);
+			callback();
 		});
+	}
 
+	public onChatStarted(callback?: any): void {
 		window.addEventListener('tawkChatStarted', () => {
-			this.onChatStarted.emit(null);
+			callback();
 		});
+	}
 
+	public onChatEnded(callback?: any): void {
 		window.addEventListener('tawkChatEnded', () => {
-			this.onChatEnded.emit(null);
+			callback();
 		});
+	}
 
+	public onPrechatSubmit(callback?: any): void {
 		window.addEventListener('tawkPrechatSubmit', (data?: any) => {
-			this.onPrechatSubmit.emit(data.detail);
+			callback(data.detail);
 		});
+	}
 
+	public onOfflineSubmit(callback?: any): void {
 		window.addEventListener('tawkOfflineSubmit', (data?: any) => {
-			this.onOfflineSubmit.emit(data.detail);
+			callback(data.detail);
 		});
+	}
 
+	public onChatMessageVisitor(callback?: any): void {
 		window.addEventListener('tawkChatMessageVisitor', (message?: any) => {
-			this.onChatMessageVisitor.emit(message.detail);
+			callback(message.detail);
 		});
+	}
 
+	public onChatMessageAgent(callback?: any): void {
 		window.addEventListener('tawkChatMessageAgent', (message?: any) => {
-			this.onChatMessageAgent.emit(message.detail);
+			callback(message.detail);
 		});
+	}
 
+	public onChatMessageSystem(callback?: any): void {
 		window.addEventListener('tawkChatMessageSystem', (message?: any) => {
-			this.onChatMessageSystem.emit(message.detail);
+			callback(message.detail);
 		});
+	}
 
+	public onAgentJoinChat(callback?: any): void {
 		window.addEventListener('tawkAgentJoinChat', (data?: any) => {
-			this.onAgentJoinChat.emit(data.detail);
+			callback(data.detail);
 		});
+	}
 
+	public onAgentLeaveChat(callback?: any): void {
 		window.addEventListener('tawkAgentLeaveChat', (data?: any) => {
-			this.onAgentLeaveChat.emit(data.detail);
+			callback(data.detail);
 		});
+	}
 
+	public onChatSatisfaction(callback?: any): void {
 		window.addEventListener('tawkChatSatisfaction', (satisfaction?: any) => {
-			this.onChatSatisfaction.emit(satisfaction.detail);
+			callback(satisfaction.detail);
 		});
+	}
 
+	public onVisitorNameChanged(callback?: any): void {
 		window.addEventListener('tawkVisitorNameChanged', (visitorName?: any) => {
-			this.onVisitorNameChanged.emit(visitorName.detail);
+			callback(visitorName.detail);
 		});
+	}
 
+	public onFileUpload(callback?: any): void {
 		window.addEventListener('tawkFileUpload', (link?: any) => {
-			this.onFileUpload.emit(link.detail);
+			callback(link.detail);
 		});
+	}
 
+	public onTagsUpdated(callback?: any): void {
 		window.addEventListener('tawkTagsUpdated', (data?: any) => {
-			this.onTagsUpdated.emit(data.detail);
+			callback(data.detail);
 		});
+	}
 
-		return;
+	public onUnreadCountChanged(callback?: any): void {
+		window.addEventListener('tawkUnreadCountChanged', (data?: any) => {
+			callback(data.detail);
+		});
 	}
 }
