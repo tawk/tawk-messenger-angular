@@ -17,57 +17,57 @@ import { TawkMessengerAngular, TawkMessengerAngularModule } from 'tawk-messenger
 })
 ```
 
-### [tawkMaximize](../projects/tawk-messenger-angular/src/lib/directives/maximize.directive.ts)
-Maximizes the chat widget. [link](https://developer.tawk.to/jsapi/#maximize)
+### maximize
+Maximizes the chat widget.
 
 ```html
 <button tawkMaximize></button>
 ```
 
-### [tawkMinimize](../projects/tawk-messenger-angular/src/lib/directives/minimize.directive.ts)
-Minimizes the chat widget. [link](https://developer.tawk.to/jsapi/#minimize)
+### minimize
+Minimizes the chat widget.
 
 ```html
 <button tawkMinimize></button>
 ```
 
-### [tawkToggle](../projects/tawk-messenger-angular/src/lib/directives/toggle.directive.ts)
-Minimizes or Maximizes the chat widget based on the current state. [link](https://developer.tawk.to/jsapi/#toggle)
+### toggle
+Minimizes or Maximizes the chat widget based on the current state.
 
 ```html
 <button tawkToggle></button>
 ```
 
-### [tawkPopup](../projects/tawk-messenger-angular/src/lib/directives/popup.directive.ts)
-Opens the chat widget as a pop out. [link](https://developer.tawk.to/jsapi/#popup)
+### popup
+Opens the chat widget as a pop out.
 
 ```html
 <button tawkPopup></button>
 ```
 
-### [tawkShowWidget](../projects/tawk-messenger-angular/src/lib/directives/showWidget.directive.ts)
-Shows the chat widget. [link](https://developer.tawk.to/jsapi/#showWidget)
+### showWidget
+Shows the chat widget.
 
 ```html
 <button tawkShowWidget></button>
 ```
 
-### [tawkHideWidget](../projects/tawk-messenger-angular/src/lib/directives/hideWidget.directive.ts)
-Hides the chat widget. [link](https://developer.tawk.to/jsapi/#hideWidget)
+### hideWidget
+Hides the chat widget.
 
 ```html
 <button tawkHideWidget></button>
 ```
 
-### [tawkToggleVisibility](../projects/tawk-messenger-angular/src/lib/directives/toggleVisibility.directive.ts)
-Hides or Shows the chat widget based on the current visibility state. [link](https://developer.tawk.to/jsapi/#toggleVisibility)
+### toggleVisibility
+Hides or Shows the chat widget based on the current visibility state.
 
 ```html
 <button tawkToggleVisibility></button>
 ```
 
-### [tawkEndChat](../projects/tawk-messenger-angular/src/lib/directives/endchat.directive.ts)
-Ends the current ongoing chat. [link](https://developer.tawk.to/jsapi/#endChat)
+### endChat
+Ends the current ongoing chat.
 
 ```html
 <button tawkEndChat></button>
