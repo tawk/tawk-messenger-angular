@@ -16,10 +16,7 @@ export class AppComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		this.TawkMessenger.init({
-			propertyId: '[propertyId]',
-			widgetId: '[widgetId]'
-		});
+		// Place your code here
 	}
 }
 ```

@@ -148,6 +148,14 @@ export class TawkMessengerAngular {
 		return (<any>window).Tawk_API.removeTags(tags, callback());
 	}
 
+	public customStyle(customStyle?: Object | undefined) {
+		if (customStyle) {
+			return (<any>window).Tawk_API.customStyle = customStyle;
+		}
+
+		return;
+	}
+
 	public onLoad(callback?: any): void {
 		window.addEventListener('tawkLoad', () => {
 			callback();

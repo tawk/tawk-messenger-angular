@@ -21,5 +21,12 @@ export class AppComponent implements OnInit {
 			propertyId: '5f30f1a6d1b59c4448ec4d90',
 			widgetId: 'default'
 		});
+
+		this.TawkMessengerAngular.customStyle({
+			zIndex: '1',
+			visibility : {
+                position : 'cr'
+			}
+		})
 	}
 }

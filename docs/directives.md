@@ -72,3 +72,44 @@ Ends the current ongoing chat.
 ```html
 <button tawkEndChat></button>
 ```
+
+<br />
+
+## customstyle
+Object used to update the widget styling. Currently only supports zIndex style. Do not place this object in a function, as the values need to be available before the widget script is downloaded. Setting or changing the values after the widget script has been downloaded will not update the widget’s style.
+
+
+### zIndex
+```js
+// zindex
+this.TawkMessengerAngular.customStyle({
+	zIndex : 1000
+});
+
+this.TawkMessengerAngular.customStyle({
+	zIndex : '1000'
+});
+
+this.TawkMessengerAngular.customStyle({
+	zIndex : '1000 !important'
+});
+```
+
+### Visibility
+```js
+this.TawkMessengerAngular.customStyle({
+	visibility : {
+		dekstop : {
+			xOffset : '15',
+			yOffset : '15',
+			position : 'cr'
+		},
+
+		mobile : {
+			xOffset : 15,
+			yOffset : 15,
+			position : 'bl'
+		}
+	}
+})
+```
