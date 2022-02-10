@@ -8,7 +8,8 @@
     "build:lib": "ng build tawk-messenger-angular",
     "npm_pack": "cd dist/tawk-messenger-angular && npm pack",
     "package": "npm run build:lib && npm run npm_pack",
-    "publish": "npm publish dist/tawk-messenger-angular && npm link dist/tawk-messenger-angular",
+    "publish": "npm publish dist/tawk-messenger-angular",
+    "link:tawk": "npm link dist/tawk-messenger-angular",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

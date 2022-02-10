@@ -20,3 +20,11 @@ export class AppComponent implements OnInit {
 	}
 }
 ```
+
+
+## Link plugin
+Run this code on your terminal root folder.
+
+```bash
+npm run package && npm run link:tawk
+```
