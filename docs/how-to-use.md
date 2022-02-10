@@ -1,7 +1,7 @@
 # How to Use
 
 ```js
-import TawkMessenger from 'tawk-messenger';
+import TawkMessengerAngular from 'tawk-messenger-angular';
 ```
 
 ## Add the plugin
@@ -9,14 +9,18 @@ Add this code in your main file, the **propertyId** and **widgetId** will be fou
 
 ```js
 export class AppComponent implements OnInit {
-	title = 'tawk-messenger-angular';
+	title = '';
 
 	constructor(
-		public TawkMessenger: TawkMessenger
+		public TawkMessengerAngular: TawkMessengerAngular
 	) { }
 
 	ngOnInit(): void {
 		// Place your code here
+		this.TawkMessengerAngular.init({
+			propertyId : '<propertyId>',
+			widgetId : '<widgetId>'
+		});
 	}
 }
 ```
@@ -27,4 +31,19 @@ Run this code on your terminal root folder.
 
 ```bash
 npm run package && npm run link:tawk
+```
+
+On your project folder add code to angular.json <code>"preserveSymlinks" : true</code>
+
+
+```json
+{
+	"projects" : {
+    	"architect": {
+			"build": {
+				"preserveSymlinks" : true
+			}
+		}
+	}
+}
 ```

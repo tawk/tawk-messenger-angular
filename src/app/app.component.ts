@@ -10,23 +10,14 @@ import { TawkMessengerAngular } from 'tawk-messenger-angular';
 export class AppComponent implements OnInit {
 	title = 'tawk-messenger-angular-workspace';
 
-	gw = '';
-
 	constructor(
 		public TawkMessengerAngular: TawkMessengerAngular
 	) { }
 
 	ngOnInit(): void {
-		this.TawkMessengerAngular.init({
-			propertyId: '5f30f1a6d1b59c4448ec4d90',
-			widgetId: 'default'
-		});
-
-		this.TawkMessengerAngular.customStyle({
-			zIndex: '1',
-			visibility : {
-                position : 'cr'
-			}
-		})
+		// this.TawkMessengerAngular.init({
+		// 	propertyId: '<propertyId>',
+		// 	widgetId: '<widgetId>'
+		// });
 	}
 }
