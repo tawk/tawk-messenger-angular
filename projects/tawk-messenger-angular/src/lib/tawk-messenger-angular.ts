@@ -26,7 +26,7 @@ export class TawkMessengerAngular {
 		this.loadScript(data);
 	}
 
-	private loadScript(data: { propertyId: string, widgetId: string, embedId: string}): void {
+	private loadScript(data: { propertyId: string, widgetId: string, embedId: string, basePath : 'tawk.to'}): void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
@@ -50,7 +50,7 @@ export class TawkMessengerAngular {
 		const s1 = this.renderer.createElement('script');
 		s1.type = 'text/javascript'
 		s1.async = true;
-		s1.src = `https://embed.tawk.to/${data.propertyId}/${data.widgetId}`;
+		s1.src = `https://embed.${data.basePath}/${data.propertyId}/${data.widgetId}`;
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
