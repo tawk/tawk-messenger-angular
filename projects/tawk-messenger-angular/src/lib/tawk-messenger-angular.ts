@@ -57,62 +57,62 @@ export class TawkMessengerAngular {
 	}
 
 	public hideWidget(): void {
-		return (<any>window).Tawk_API.hideWidget();
+		(<any>window).Tawk_API.hideWidget();
 	}
 
 	public showWidget(): void {
-		return (<any>window).Tawk_API.showWidget();
+		(<any>window).Tawk_API.showWidget();
 	}
 
 	public maximize(): void {
-		return (<any>window).Tawk_API.maximize();
+		(<any>window).Tawk_API.maximize();
 	}
 
 	public minimize(): void {
-		return (<any>window).Tawk_API.minimize();
+		(<any>window).Tawk_API.minimize();
 	}
 
 	public toggle(): void {
-		return (<any>window).Tawk_API.toggle();
+		(<any>window).Tawk_API.toggle();
 	}
 
 	public popup(): void {
-		return (<any>window).Tawk_API.popup();
+		(<any>window).Tawk_API.popup();
 	}
 
 	public toggleVisibility(): void {
-		return (<any>window).Tawk_API.toggleVisibility();
+		(<any>window).Tawk_API.toggleVisibility();
 	}
 
 	public endChat(): void {
-		return (<any>window).Tawk_API.endChat();
+		(<any>window).Tawk_API.endChat();
 	}
 
-	public getWindowType(): void {
+	public getWindowType(): string {
 		return (<any>window).Tawk_API.getWindowType();
 	}
 
-	public getStatus(): void {
+	public getStatus(): string {
 		return (<any>window).Tawk_API.getStatus();
 	}
 
-	public isChatMaximized(): void {
+	public isChatMaximized(): boolean {
 		return (<any>window).Tawk_API.isChatMaximized();
 	}
 
-	public isChatMinimized(): void {
+	public isChatMinimized(): boolean {
 		return (<any>window).Tawk_API.isChatMinimized();
 	}
 
-	public isChatHidden(): void {
+	public isChatHidden(): boolean {
 		return (<any>window).Tawk_API.isChatHidden();
 	}
 
-	public isChatOngoing(): void {
+	public isChatOngoing(): boolean {
 		return (<any>window).Tawk_API.isChatOngoing();
 	}
 
-	public isVisitorEngaged(): void {
+	public isVisitorEngaged(): boolean {
 		return (<any>window).Tawk_API.isVisitorEngaged();
 	}
 
@@ -121,34 +121,34 @@ export class TawkMessengerAngular {
 	}
 
 	public onBeforeLoaded(): void {
-		return (<any>window).Tawk_API.onBeforeLoaded ();
+		return (<any>window).Tawk_API.onBeforeLoaded();
 	}
 
 	public widgetPosition(): void {
-		return (<any>window).Tawk_API.widgetPosition  ();
+		return (<any>window).Tawk_API.widgetPosition();
 	}
 
-	public visitor(data: string) {
+	public visitor(data: any) {
 		return (<any>window).Tawk_API.visitor = data;
 	}
 
-	public setAttributes(attribute: string, callback: (error?: any) => any) {
-		return (<any>window).Tawk_API.setAttributes(attribute, callback());
+	public setAttributes(attribute: string[], callback: (error?: string | null) => void) {
+		(<any>window).Tawk_API.setAttributes(attribute, callback());
 	}
 
-	public addEvent(event: string, metadata: any, callback: (error?: any) => any) {
-		return (<any>window).Tawk_API.setAttributes(event, metadata, callback());
+	public addEvent(event: string[], metadata: any, callback: (error?: any | null) => void) {
+		(<any>window).Tawk_API.setAttributes(event, metadata, callback());
 	}
 
-	public addTags(tags: any, callback: (error?: any) => any) {
-		return (<any>window).Tawk_API.addTags(tags, callback());
+	public addTags(tags: string[], callback: (error?: string | null) => void) {
+		(<any>window).Tawk_API.addTags(tags, callback());
 	}
 
-	public removeTags(tags: any, callback: (error?: any) => any) {
-		return (<any>window).Tawk_API.removeTags(tags, callback());
+	public removeTags(tags: string[], callback: (error?: string | null) => void) {
+		(<any>window).Tawk_API.removeTags(tags, callback());
 	}
 
-	public customStyle(customStyle?: Object | undefined) {
+	public customStyle(customStyle?: object | undefined) {
 		if (customStyle) {
 			return (<any>window).Tawk_API.customStyle = customStyle;
 		}
