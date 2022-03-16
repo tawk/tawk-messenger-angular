@@ -41,7 +41,9 @@ On your project folder add code to angular.json <code>"preserveSymlinks" : true<
 	"projects" : {
     	"architect": {
 			"build": {
-				"preserveSymlinks" : true
+				"options": {
+					"preserveSymlinks" : true
+				}
 			}
 		}
 	}
