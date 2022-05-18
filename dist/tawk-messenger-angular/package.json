@@ -1,0 +1,31 @@
+{
+  "name": "tawk-messenger-angular",
+  "version": "0.0.0-watch+1645431840175",
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "module": "fesm2015/tawk-messenger-angular.mjs",
+  "es2020": "fesm2020/tawk-messenger-angular.mjs",
+  "esm2020": "esm2020/tawk-messenger-angular.mjs",
+  "fesm2020": "fesm2020/tawk-messenger-angular.mjs",
+  "fesm2015": "fesm2015/tawk-messenger-angular.mjs",
+  "typings": "tawk-messenger-angular.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./tawk-messenger-angular.d.ts",
+      "esm2020": "./esm2020/tawk-messenger-angular.mjs",
+      "es2020": "./fesm2020/tawk-messenger-angular.mjs",
+      "es2015": "./fesm2015/tawk-messenger-angular.mjs",
+      "node": "./fesm2015/tawk-messenger-angular.mjs",
+      "default": "./fesm2020/tawk-messenger-angular.mjs"
+    }
+  },
+  "sideEffects": false
+}
