@@ -70,9 +70,10 @@ This project includes a `docs` folder with more details on:
 <br/>
 
 ## Other JS frameworks plugin
-- [Vue Js](https://github.com/tawk/tawk-messenger-vue)
+- [Vue 2 Js](https://github.com/tawk/tawk-messenger-vue-2)
+- [Vue 3 JS](https://github.com/tawk/tawk-messenger-vue-3)
 - [React Js](https://github.com/tawk/tawk-messenger-react)
-- [Angular Js](https://github.com/tawk/tawk-messenger-angular)
+- [Ember Js](https://github.com/tawk/tawk-messenger-ember)
 - Ember Js
 
 <br/>

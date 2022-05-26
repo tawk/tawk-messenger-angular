@@ -26,7 +26,7 @@ export class TawkMessengerAngular {
 		this.loadScript(data);
 	}
 
-	private loadScript(data: { propertyId: string, widgetId: string, embedId: string}): void {
+	private loadScript(data: { propertyId: string, widgetId: string, embedId: string, basePath : 'tawk.to'}): void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
@@ -50,7 +50,7 @@ export class TawkMessengerAngular {
 		const s1 = this.renderer.createElement('script');
 		s1.type = 'text/javascript'
 		s1.async = true;
-		s1.src = `https://embed.tawk.to/${data.propertyId}/${data.widgetId}`;
+		s1.src = `https://embed.${data.basePath}/${data.propertyId}/${data.widgetId}`;
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
@@ -132,20 +132,20 @@ export class TawkMessengerAngular {
 		return (<any>window).Tawk_API.visitor = data;
 	}
 
-	public setAttributes(attribute: string[], callback: (error?: string | null) => void) {
-		(<any>window).Tawk_API.setAttributes(attribute, callback());
+	public setAttributes(attribute: object, callback: (error?: string | null) => void) {
+		(<any>window).Tawk_API.setAttributes(attribute, callback);
 	}
 
 	public addEvent(event: string[], metadata: any, callback: (error?: any | null) => void) {
-		(<any>window).Tawk_API.setAttributes(event, metadata, callback());
+		(<any>window).Tawk_API.setAttributes(event, metadata, callback);
 	}
 
 	public addTags(tags: string[], callback: (error?: string | null) => void) {
-		(<any>window).Tawk_API.addTags(tags, callback());
+		(<any>window).Tawk_API.addTags(tags, callback);
 	}
 
 	public removeTags(tags: string[], callback: (error?: string | null) => void) {
-		(<any>window).Tawk_API.removeTags(tags, callback());
+		(<any>window).Tawk_API.removeTags(tags, callback);
 	}
 
 	public customStyle(customStyle?: object | undefined) {
@@ -158,7 +158,7 @@ export class TawkMessengerAngular {
 
 	public onLoad(callback?: any): void {
 		window.addEventListener('tawkLoad', () => {
-			callback();
+			callback;
 		});
 	}
 
