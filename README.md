@@ -1,7 +1,3 @@
-<h1 align="center">
-    Notice: Still Under Development
-</h1>
-
 <p align="center">
 	<img
 		width="250"
