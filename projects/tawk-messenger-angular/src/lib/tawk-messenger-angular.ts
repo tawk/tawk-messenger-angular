@@ -158,7 +158,7 @@ export class TawkMessengerAngular {
 
 	public onLoad(callback?: any): void {
 		window.addEventListener('tawkLoad', () => {
-			callback;
+			callback();
 		});
 	}
 
