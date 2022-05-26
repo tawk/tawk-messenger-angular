@@ -74,7 +74,6 @@ This project includes a `docs` folder with more details on:
 - [Vue 3 JS](https://github.com/tawk/tawk-messenger-vue-3)
 - [React Js](https://github.com/tawk/tawk-messenger-react)
 - [Ember Js](https://github.com/tawk/tawk-messenger-ember)
-- Ember Js
 
 <br/>
 
