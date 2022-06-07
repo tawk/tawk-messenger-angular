@@ -10,9 +10,9 @@ export class TawkShowWidgetDirective {
         this.TawkMessengerAngular.showWidget();
     }
 }
-TawkShowWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkShowWidgetDirective, deps: [{ token: i1.TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkShowWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkShowWidgetDirective, selector: "[tawkShowWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkShowWidgetDirective, decorators: [{
+TawkShowWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkShowWidgetDirective, deps: [{ token: i1.TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkShowWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkShowWidgetDirective, selector: "[tawkShowWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkShowWidgetDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkShowWidget]'
