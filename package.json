@@ -1,6 +1,27 @@
 {
-  "name": "tawk-messenger-angular-workspace",
-  "version": "0.0.0",
+  "name": "@tawk.to/tawk-messenger-angular",
+  "version": "1.0.0",
+  "description": "Official Angular plugin for Tawk messenger",
+  "keywords": [
+    "tawk-messenger-angular",
+    "angular",
+    "angular-tawk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tawk/tawk-messenger-angular.git",
+    "repository": "tawk/tawk-messenger-angular"
+  },
+  "homepage": "https://github.com/tawk/tawk-messenger-angular#readme",
+  "bugs": {
+    "url": "https://github.com/tawk/tawk-messenger-angular/issues",
+    "email": "support@tawk.to"
+  },
+  "license": "Apache-2.0",
+  "author": "https://www.tawk.to",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,14 +49,11 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^13.1.4",
-    "@angular/cli": "~13.0.1",
+    "@angular-devkit/build-angular": "~13.0.4",
+    "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
-    "babel-loader": "^8.2.3",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -43,7 +61,6 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
-    "typescript": "~4.4.3",
-    "webpack": "^5.64.2"
+    "typescript": "~4.4.3"
   }
 }

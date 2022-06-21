@@ -26,11 +26,11 @@ export declare class TawkMessengerAngular {
     onLoaded(): void;
     onBeforeLoaded(): void;
     widgetPosition(): void;
-    visitor(data: string): string;
-    setAttributes(attribute: string, callback: (error?: string | null) => void): void;
-    addEvent(event: string, metadata: any, callback: (error?: any | null) => void): void;
-    addTags(tags: any, callback: (error?: string | null) => void): void;
-    removeTags(tags: any, callback: (error?: string | null) => void): void;
+    visitor(data: any): any;
+    setAttributes(attribute: object, callback: (error?: string | null) => void): void;
+    addEvent(event: string[], metadata: any, callback: (error?: any | null) => void): void;
+    addTags(tags: string[], callback: (error?: string | null) => void): void;
+    removeTags(tags: string[], callback: (error?: string | null) => void): void;
     customStyle(customStyle?: object | undefined): object | undefined;
     onLoad(callback?: any): void;
     onStatusChange(callback?: any): void;

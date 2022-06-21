@@ -36,7 +36,7 @@ class TawkMessengerAngular {
         const s1 = this.renderer.createElement('script');
         s1.type = 'text/javascript';
         s1.async = true;
-        s1.src = `https://embed.tawk.to/${data.propertyId}/${data.widgetId}`;
+        s1.src = `https://embed.${data.basePath}/${data.propertyId}/${data.widgetId}`;
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         this.renderer.appendChild(this.document.head, s1);
@@ -99,16 +99,16 @@ class TawkMessengerAngular {
         return window.Tawk_API.visitor = data;
     }
     setAttributes(attribute, callback) {
-        window.Tawk_API.setAttributes(attribute, callback());
+        window.Tawk_API.setAttributes(attribute, callback);
     }
     addEvent(event, metadata, callback) {
-        window.Tawk_API.setAttributes(event, metadata, callback());
+        window.Tawk_API.setAttributes(event, metadata, callback);
     }
     addTags(tags, callback) {
-        window.Tawk_API.addTags(tags, callback());
+        window.Tawk_API.addTags(tags, callback);
     }
     removeTags(tags, callback) {
-        window.Tawk_API.removeTags(tags, callback());
+        window.Tawk_API.removeTags(tags, callback);
     }
     customStyle(customStyle) {
         if (customStyle) {
@@ -217,22 +217,24 @@ class TawkMessengerAngular {
         });
     }
 }
-TawkMessengerAngular.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngular, deps: [{ token: i0.RendererFactory2 }, { token: PLATFORM_ID }, { token: DOCUMENT, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-TawkMessengerAngular.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngular, providedIn: 'root' });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngular, decorators: [{
+TawkMessengerAngular.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngular, deps: [{ token: i0.RendererFactory2 }, { token: PLATFORM_ID }, { token: DOCUMENT, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+TawkMessengerAngular.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngular, providedIn: 'root' });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngular, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
                 }]
-        }], ctorParameters: function () { return [{ type: i0.RendererFactory2 }, { type: Object, decorators: [{
-                    type: Inject,
-                    args: [PLATFORM_ID]
-                }] }, { type: undefined, decorators: [{
-                    type: Optional
-                }, {
-                    type: Inject,
-                    args: [DOCUMENT]
-                }] }]; } });
+        }], ctorParameters: function () {
+        return [{ type: i0.RendererFactory2 }, { type: Object, decorators: [{
+                        type: Inject,
+                        args: [PLATFORM_ID]
+                    }] }, { type: undefined, decorators: [{
+                        type: Optional
+                    }, {
+                        type: Inject,
+                        args: [DOCUMENT]
+                    }] }];
+    } });
 
 /* tslint:disable:directive-selector */
 class TawkMaximizeDirective {
@@ -243,9 +245,9 @@ class TawkMaximizeDirective {
         this.TawkMessengerAngular.maximize();
     }
 }
-TawkMaximizeDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMaximizeDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkMaximizeDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkMaximizeDirective, selector: "[tawkMaximize]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMaximizeDirective, decorators: [{
+TawkMaximizeDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMaximizeDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkMaximizeDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkMaximizeDirective, selector: "[tawkMaximize]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMaximizeDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkMaximize]'
@@ -264,9 +266,9 @@ class TawkMinimizeDirective {
         this.TawkMessengerAngular.minimize();
     }
 }
-TawkMinimizeDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMinimizeDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkMinimizeDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkMinimizeDirective, selector: "[tawkMinimize]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMinimizeDirective, decorators: [{
+TawkMinimizeDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMinimizeDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkMinimizeDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkMinimizeDirective, selector: "[tawkMinimize]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMinimizeDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkMinimize]'
@@ -285,9 +287,9 @@ class TawkToggleDirective {
         this.TawkMessengerAngular.toggle();
     }
 }
-TawkToggleDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkToggleDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkToggleDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkToggleDirective, selector: "[tawkToggle]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkToggleDirective, decorators: [{
+TawkToggleDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkToggleDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkToggleDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkToggleDirective, selector: "[tawkToggle]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkToggleDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkToggle]'
@@ -306,9 +308,9 @@ class TawkShowWidgetDirective {
         this.TawkMessengerAngular.showWidget();
     }
 }
-TawkShowWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkShowWidgetDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkShowWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkShowWidgetDirective, selector: "[tawkShowWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkShowWidgetDirective, decorators: [{
+TawkShowWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkShowWidgetDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkShowWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkShowWidgetDirective, selector: "[tawkShowWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkShowWidgetDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkShowWidget]'
@@ -327,9 +329,9 @@ class TawkPopupDirective {
         this.TawkMessengerAngular.popup();
     }
 }
-TawkPopupDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkPopupDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkPopupDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkPopupDirective, selector: "[tawkPopup]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkPopupDirective, decorators: [{
+TawkPopupDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkPopupDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkPopupDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkPopupDirective, selector: "[tawkPopup]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkPopupDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkPopup]'
@@ -348,9 +350,9 @@ class TawkHideWidgetDirective {
         this.TawkMessengerAngular.hideWidget();
     }
 }
-TawkHideWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkHideWidgetDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkHideWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkHideWidgetDirective, selector: "[tawkHideWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkHideWidgetDirective, decorators: [{
+TawkHideWidgetDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkHideWidgetDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkHideWidgetDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkHideWidgetDirective, selector: "[tawkHideWidget]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkHideWidgetDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkHideWidget]'
@@ -369,9 +371,9 @@ class TawkToggleVisibilityDirective {
         this.TawkMessengerAngular.toggleVisibility();
     }
 }
-TawkToggleVisibilityDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkToggleVisibilityDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkToggleVisibilityDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkToggleVisibilityDirective, selector: "[tawkToggleVisibility]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkToggleVisibilityDirective, decorators: [{
+TawkToggleVisibilityDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkToggleVisibilityDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkToggleVisibilityDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkToggleVisibilityDirective, selector: "[tawkToggleVisibility]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkToggleVisibilityDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkToggleVisibility]'
@@ -390,9 +392,9 @@ class TawkEndChatDirective {
         this.TawkMessengerAngular.endChat();
     }
 }
-TawkEndChatDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkEndChatDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
-TawkEndChatDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.2", type: TawkEndChatDirective, selector: "[tawkEndChat]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkEndChatDirective, decorators: [{
+TawkEndChatDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkEndChatDirective, deps: [{ token: TawkMessengerAngular }], target: i0.ɵɵFactoryTarget.Directive });
+TawkEndChatDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "12.0.0", version: "13.0.3", type: TawkEndChatDirective, selector: "[tawkEndChat]", host: { listeners: { "click": "onClick()" } }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkEndChatDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[tawkEndChat]'
@@ -404,8 +406,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImpor
 
 class TawkMessengerAngularModule {
 }
-TawkMessengerAngularModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, declarations: [TawkMaximizeDirective,
+TawkMessengerAngularModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, declarations: [TawkMaximizeDirective,
         TawkMinimizeDirective,
         TawkToggleDirective,
         TawkPopupDirective,
@@ -420,10 +422,10 @@ TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.
         TawkHideWidgetDirective,
         TawkToggleVisibilityDirective,
         TawkEndChatDirective] });
-TawkMessengerAngularModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, providers: [
+TawkMessengerAngularModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, providers: [
         TawkMessengerAngular
     ], imports: [[]] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [],
@@ -462,4 +464,4 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImpor
  */
 
 export { TawkEndChatDirective, TawkHideWidgetDirective, TawkMaximizeDirective, TawkMessengerAngular, TawkMessengerAngularModule, TawkMinimizeDirective, TawkPopupDirective, TawkShowWidgetDirective, TawkToggleDirective, TawkToggleVisibilityDirective };
-//# sourceMappingURL=tawk-messenger-angular.mjs.map
+//# sourceMappingURL=tawk.to-tawk-messenger-angular.mjs.map

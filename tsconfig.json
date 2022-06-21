@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "tawk-messenger-angular": [
+        "dist/tawk-messenger-angular/tawk-messenger-angular",
+        "dist/tawk-messenger-angular"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -21,17 +27,7 @@
     "lib": [
       "es2020",
       "dom"
-    ],
-    "paths": {
-      "tawk-messenger": [
-        "dist/tawk-messenger/tawk-messenger",
-        "dist/tawk-messenger"
-      ],
-      "tawk-messenger-angular": [
-        "dist/tawk-messenger-angular/tawk-messenger-angular",
-        "dist/tawk-messenger-angular"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
