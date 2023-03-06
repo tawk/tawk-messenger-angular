@@ -15,7 +15,7 @@ export class TawkMessengerAngular {
 		this.renderer = this.rendererFactory.createRenderer(null, null);
 	}
 
-	public init(data: any) {
+	public init(data : any) : void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
@@ -26,31 +26,31 @@ export class TawkMessengerAngular {
 		this.loadScript(data);
 	}
 
-	private loadScript(data: { propertyId: string, widgetId: string, embedId: string, basePath : 'tawk.to'}): void {
+	private loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '' }): void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
 
-		if (data.embedId && data.embedId.length) {
+		if (embedId && embedId.length) {
 			/**
 			 * If the element with embedId as id we will create a new clement
 			 */
-			if (!document.getElementById(data.embedId)) {
+			if (!document.getElementById(embedId)) {
 				const element = this.renderer.createElement('div');
 
-				this.renderer.setProperty(element, 'id', data.embedId);
+				this.renderer.setProperty(element, 'id', embedId);
 
 				// Append the created div to the body element
 				this.renderer.appendChild(document.body, element);
 			}
 
-			(<any>window).Tawk_API.embedded = data.embedId;
+			(<any>window).Tawk_API.embedded = embedId;
 		}
 
 		const s1 = this.renderer.createElement('script');
 		s1.type = 'text/javascript'
 		s1.async = true;
-		s1.src = `https://embed.${data.basePath}/${data.propertyId}/${data.widgetId}`;
+		s1.src = `https://embed.${basePath}/${propertyId}/${widgetId}`;
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);

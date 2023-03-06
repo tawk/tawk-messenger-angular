@@ -31,7 +31,7 @@ yarn add @tawk.to/tawk-messenger-angular
 Import the **tawk-messenger-angular** in your **app.component.ts**. The **propertyId** and **widgetId** will be found on your tawk dashboard **Administration > Chat Widget**.
 
 ```js
-import { TawkMessengerAngular } from 'tawk-messenger-angular';
+import { TawkMessengerAngular } from '@tawk/tawk-messenger-angular';
 
 @Component({
   selector: 'app-root',

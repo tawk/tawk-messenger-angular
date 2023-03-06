@@ -4,7 +4,7 @@
 Import the **tawk-messenger-angular.module** in your **app.module.ts**
 
 ```js
-import { TawkMessengerAngular, TawkMessengerAngularModule } from 'tawk-messenger-angular';
+import { TawkMessengerAngular, TawkMessengerAngularModule } from '@tawk/tawk-messenger-angular';
 
 @NgModule({
   	imports: [

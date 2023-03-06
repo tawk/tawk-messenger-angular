@@ -1,7 +1,7 @@
 # How to Use
 
 ```js
-import TawkMessengerAngular from 'tawk-messenger-angular';
+import TawkMessengerAngular from '@tawk/tawk-messenger-angular';
 ```
 
 ## Add the plugin
