@@ -12,8 +12,8 @@ import { TawkMessengerAngular } from './tawk-messenger-angular';
 import * as i0 from "@angular/core";
 export class TawkMessengerAngularModule {
 }
-TawkMessengerAngularModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, declarations: [TawkMaximizeDirective,
+TawkMessengerAngularModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, declarations: [TawkMaximizeDirective,
         TawkMinimizeDirective,
         TawkToggleDirective,
         TawkPopupDirective,
@@ -28,10 +28,10 @@ TawkMessengerAngularModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.
         TawkHideWidgetDirective,
         TawkToggleVisibilityDirective,
         TawkEndChatDirective] });
-TawkMessengerAngularModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, providers: [
+TawkMessengerAngularModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, providers: [
         TawkMessengerAngular
     ], imports: [[]] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.2", ngImport: i0, type: TawkMessengerAngularModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.0.3", ngImport: i0, type: TawkMessengerAngularModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [],
