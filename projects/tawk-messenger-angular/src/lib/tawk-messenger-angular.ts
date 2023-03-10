@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID, Optional, Renderer2, RendererFactory2, Output, HostListener, EventEmitter } from "@angular/core";
+import { Inject, Injectable, PLATFORM_ID, Optional, Renderer2, RendererFactory2 } from "@angular/core";
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -136,8 +136,8 @@ export class TawkMessengerAngular {
 		(<any>window).Tawk_API.setAttributes(attribute, callback);
 	}
 
-	public addEvent(event: string[], metadata: any, callback: (error?: any | null) => void) {
-		(<any>window).Tawk_API.setAttributes(event, metadata, callback);
+	public addEvent(event: string, metadata: Record<string, any> | null = null, callback: (error?: any | null) => void) {
+		(<any>window).Tawk_API.addEvent(event, metadata, callback);
 	}
 
 	public addTags(tags: string[], callback: (error?: string | null) => void) {
