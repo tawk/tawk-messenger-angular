@@ -31,6 +31,7 @@ export declare class TawkMessengerAngular {
     addEvent(event: string[], metadata: any, callback: (error?: any | null) => void): void;
     addTags(tags: string[], callback: (error?: string | null) => void): void;
     removeTags(tags: string[], callback: (error?: string | null) => void): void;
+    switchWidget(data: object, callback: () => void): void;
     customStyle(customStyle?: object | undefined): object | undefined;
     onLoad(callback?: any): void;
     onStatusChange(callback?: any): void;

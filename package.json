@@ -1,6 +1,6 @@
 {
   "name": "@tawk.to/tawk-messenger-angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Angular plugin for Tawk messenger",
   "keywords": [
     "tawk-messenger-angular",
