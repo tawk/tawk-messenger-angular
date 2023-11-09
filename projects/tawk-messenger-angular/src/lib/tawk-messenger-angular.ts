@@ -56,6 +56,14 @@ export class TawkMessengerAngular {
 		this.renderer.appendChild(this.document.head, s1);
 	}
 
+	public start(): void {
+		(<any>window).Tawk_API.start();
+	}
+
+	public shutdown(): void {
+		(<any>window).Tawk_API.shutdown();
+	}
+
 	public hideWidget(): void {
 		(<any>window).Tawk_API.hideWidget();
 	}
@@ -130,6 +138,10 @@ export class TawkMessengerAngular {
 
 	public visitor(data: any) {
 		return (<any>window).Tawk_API.visitor = data;
+	}
+
+	public autoStart(enable: boolean) {
+		return (<any>window).Tawk_API.autoStart = enable;
 	}
 
 	public setAttributes(attribute: object, callback: (error?: string | null) => void) {
