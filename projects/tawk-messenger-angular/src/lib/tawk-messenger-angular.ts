@@ -54,10 +54,10 @@ export class TawkMessengerAngular {
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
-	}
 
-	if (autoStart: boolean) {
-		(<any>window).window.Tawk_API.autoStart = autoStart;
+		if (autoStart) {
+			(<any>window).window.Tawk_API.autoStart = autoStart;
+		}
 	}
 
 	public start(): void {
