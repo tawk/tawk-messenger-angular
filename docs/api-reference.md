@@ -335,7 +335,11 @@ you will need to manually call the start API. It will not register and connect t
 if this is set to false.
 
 ```js
-this.TawkMessengerAngular.autoStart(false);
+this.TawkMessengerAngular.init({
+	propertyId : '<propertyId>',
+	widgetId : '<widgetId>',
+	autoStart : false
+});
 ```
 
 <br/>

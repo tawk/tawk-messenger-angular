@@ -26,7 +26,7 @@ export class TawkMessengerAngular {
 		this.loadScript(data);
 	}
 
-	private loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '' }): void {
+	private loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '', autoStart = true }): void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
@@ -54,6 +54,10 @@ export class TawkMessengerAngular {
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
+	}
+
+	if (autoStart: boolean) {
+		(<any>window).window.Tawk_API.autoStart = autoStart;
 	}
 
 	public start(): void {
@@ -138,10 +142,6 @@ export class TawkMessengerAngular {
 
 	public visitor(data: any) {
 		return (<any>window).Tawk_API.visitor = data;
-	}
-
-	public autoStart(enable: boolean) {
-		return (<any>window).Tawk_API.autoStart = enable;
 	}
 
 	public setAttributes(attribute: object, callback: (error?: string | null) => void) {
