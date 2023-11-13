@@ -47,7 +47,7 @@ export class TawkMessengerAngular {
 			(<any>window).Tawk_API.embedded = embedId;
 		}
 
-		if (autoStart) {
+		if (!autoStart) {
 			(<any>window).window.Tawk_API.autoStart = autoStart;
 		}
 
