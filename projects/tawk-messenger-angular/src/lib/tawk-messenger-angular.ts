@@ -26,7 +26,7 @@ export class TawkMessengerAngular {
 		this.loadScript(data);
 	}
 
-	private loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '' }): void {
+	private loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '', autoStart = true }): void {
 		if (!isPlatformBrowser(this.platformId)) {
 			return;
 		}
@@ -47,6 +47,10 @@ export class TawkMessengerAngular {
 			(<any>window).Tawk_API.embedded = embedId;
 		}
 
+		if (!autoStart) {
+			(<any>window).window.Tawk_API.autoStart = autoStart;
+		}
+
 		const s1 = this.renderer.createElement('script');
 		s1.type = 'text/javascript'
 		s1.async = true;
@@ -54,6 +58,14 @@ export class TawkMessengerAngular {
 		s1.charset = 'UTF-8';
 		s1.setAttribute('crossorigin', '*');
 		this.renderer.appendChild(this.document.head, s1);
+	}
+
+	public start(): void {
+		(<any>window).Tawk_API.start();
+	}
+
+	public shutdown(): void {
+		(<any>window).Tawk_API.shutdown();
 	}
 
 	public hideWidget(): void {
