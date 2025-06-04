@@ -160,6 +160,10 @@ export class TawkMessengerAngular {
 		(<any>window).Tawk_API.removeTags(tags, callback);
 	}
 
+	public switchWidget(data: object, callback: () => void) {
+		(<any>window).Tawk_API.switchWidget(data, callback);
+	}
+
 	public customStyle(customStyle?: object | undefined) {
 		if (customStyle) {
 			return (<any>window).Tawk_API.customStyle = customStyle;

@@ -55,6 +55,7 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 	- [removeTags](#removetags)
 	- [secureMode](#securemode)
 	- [customstyle](#customstyle)
+	- [switchWidget](#switchwidget)
 
 <br/>
 
@@ -717,3 +718,18 @@ Object used to update the widget styling. Currently only supports zIndex style. 
 object in a function, as the values need to be available before the widget script is downloaded.
 Setting or changing the values after the widget script has been downloaded will not update the
 widget’s style.
+
+<br/>
+
+## switchWidget
+Disconnect the current widget connection, logout if it has existing user login and switch to
+another widget.
+
+```js
+this.TawkMessengerAngular.switchWidget({
+    propertyId : 'property_id',
+    widgetId : 'widget_id'
+}, function() {
+    // do something
+});
+```
