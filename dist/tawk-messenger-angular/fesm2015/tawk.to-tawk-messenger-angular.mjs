@@ -17,7 +17,7 @@ class TawkMessengerAngular {
         window.Tawk_LoadStart = new Date();
         this.loadScript(data);
     }
-    loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '' }) {
+    loadScript({ basePath = 'tawk.to', propertyId = '', widgetId = '', embedId = '', autoStart = true }) {
         if (!isPlatformBrowser(this.platformId)) {
             return;
         }
@@ -33,6 +33,9 @@ class TawkMessengerAngular {
             }
             window.Tawk_API.embedded = embedId;
         }
+        if (!autoStart) {
+            window.window.Tawk_API.autoStart = autoStart;
+        }
         const s1 = this.renderer.createElement('script');
         s1.type = 'text/javascript';
         s1.async = true;
@@ -40,6 +43,12 @@ class TawkMessengerAngular {
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         this.renderer.appendChild(this.document.head, s1);
+    }
+    start() {
+        window.Tawk_API.start();
+    }
+    shutdown() {
+        window.Tawk_API.shutdown();
     }
     hideWidget() {
         window.Tawk_API.hideWidget();

@@ -8,6 +8,8 @@ export declare class TawkMessengerAngular {
     constructor(rendererFactory: RendererFactory2, platformId: Object, document: any);
     init(data: any): void;
     private loadScript;
+    start(): void;
+    shutdown(): void;
     hideWidget(): void;
     showWidget(): void;
     maximize(): void;
